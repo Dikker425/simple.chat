@@ -8,6 +8,7 @@
       fx:controller="chat.Client.Controller">
     <MenuBar>
         <Menu text="File">
+            <MenuItem text="Change Name" onAction="#nameChange"/>
             <MenuItem text="Exit" onAction="#menuItemFileExitAction"/>
         </Menu>
         <padding>

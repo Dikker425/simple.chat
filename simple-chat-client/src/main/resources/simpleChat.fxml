@@ -8,13 +8,14 @@
       fx:controller="chat.Client.Controller">
     <MenuBar>
         <Menu text="File">
+            <MenuItem text="Change Name" onAction="#nameChange"/>
             <MenuItem text="Exit" onAction="#menuItemFileExitAction"/>
         </Menu>
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
         </padding>
     </MenuBar>
-    <TextArea editable="false" VBox.vgrow="ALWAYS" fx:id="textOutput" >
+    <TextArea editable="false" VBox.vgrow="ALWAYS" fx:id="textOutput">
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
         </padding>

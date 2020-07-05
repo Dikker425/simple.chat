@@ -9,17 +9,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
 
     private Network network;
-
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-
 
     @FXML
     TextArea textOutput;
@@ -36,7 +31,7 @@ public class Controller implements Initializable {
         Platform.exit();
     }
 
-    // отправка соробщения через Enter или кнопку
+    // отправка соробщения
     public void sendMessage(ActionEvent actionEvent) {
         network.sendMessage(textInput.getText());
         textInput.clear();
@@ -46,7 +41,11 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         network = new Network((args -> {
-            textOutput.appendText((String)args[0]);
+            textOutput.appendText((String) args[0]);
         }));
+    }
+
+    public void nameChange(ActionEvent actionEvent) {
+        textInput.setText("/changename ");
     }
 }
