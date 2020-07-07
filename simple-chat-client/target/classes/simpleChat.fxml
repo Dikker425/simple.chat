@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.2-internal"
+      fx:controller="chat.Client.Controller">
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Change Name" onAction="#nameChange"/>
+            <MenuItem text="Exit" onAction="#menuItemFileExitAction"/>
+        </Menu>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </MenuBar>
+    <TextArea editable="false" VBox.vgrow="ALWAYS" fx:id="textOutput" >
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </TextArea>
+
+    <HBox spacing="5">
+        <TextField HBox.hgrow="ALWAYS" fx:id="textInput" onAction="#sendMessage" promptText="Введите сообщение..."/>
+        <Button text="SEND" fx:id="sendButton" onAction="#sendMessage"/>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </HBox>
+
+
+</VBox>
